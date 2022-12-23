@@ -7,6 +7,7 @@ include_directories(${PROJECT_SOURCE_DIR}/include)
 option(USE_X11 "Build with X11 support" ON)
 option(BUILD_EXAMPLE "Build example programs" ON)
 
+
 add_library(
     spnav
     SHARED
@@ -45,3 +46,7 @@ if(BUILD_EXAMPLE)
     target_link_libraries(simple PUBLIC X11 spnav m)
 endif()
 
+set(VERSION ${PROJECT_VERSION})
+set(PREFIX ${CMAKE_INSTALL_PREFIX})
+set(LIBDIR lib)
+configure_file(spacenav.pc.in spacenav.pc @ONLY) 
