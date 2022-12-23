@@ -24,10 +24,7 @@ CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING
 IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY
 OF SUCH DAMAGE.
 */
-#ifndef SPACENAV_H_
-#define SPACENAV_H_
-
-#include "spnav_config.h"
+#pragma once
 
 #ifdef SPNAV_USE_X11
 #include <X11/Xlib.h>
@@ -379,5 +376,3 @@ int spnav_cfg_get_serial(char *buf, int bufsz);
 #ifdef __cplusplus
 }
 #endif
-
-#endif	/* SPACENAV_H_ */

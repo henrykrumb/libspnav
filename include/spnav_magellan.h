@@ -30,8 +30,7 @@ OF SUCH DAMAGE.
  * It is actually implemented as a wrapper on top of the new spnav interface
  * (see spnav.h).
  */
-#ifndef SPACENAV_MAGELLAN_H_
-#define SPACENAV_MAGELLAN_H_
+#pragma once
 
 #include <X11/Xlib.h>
 
@@ -88,5 +87,3 @@ int MagellanMultiplicationMatrix(double mat_a[4][4], double mat_b[4][4], double 
 #ifdef __cplusplus
 }
 #endif
-
-#endif	/* SPACENAV_MAGELLAN_H_ */

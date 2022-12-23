@@ -4,6 +4,7 @@
 *.a
 *.so
 *.so.*
+build/
 spnav_config.h
 Makefile
 examples/cube/cube

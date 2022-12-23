@@ -1,5 +1,4 @@
-#ifndef PROTO_H_
-#define PROTO_H_
+#pragma once
 
 #include <stdint.h>
 
@@ -184,5 +183,3 @@ extern const int spnav_reqnames_1000_size;
 extern const int spnav_reqnames_2000_size;
 extern const int spnav_reqnames_3000_size;
 #endif	/* DEF_PROTO_REQ_NAMES */
-
-#endif	/* PROTO_H_ */
