@@ -6,13 +6,23 @@ include_directories(${PROJECT_SOURCE_DIR}/include)
 
 option(USE_X11 "Build with X11 support" ON)
 option(BUILD_EXAMPLE "Build example programs" ON)
+option(BUILD_STATIC "Build shared library" OFF)
 
+if(BUILD_STATIC)
+    add_library(
+        spnav
+        STATIC
+        src/proto.c src/spnav.c src/util.c src/spnav_magellan.c
+    )
+    target_link_libraries(spnav PUBLIC m)
+else()
+    add_library(
+        spnav
+        SHARED
+        src/proto.c src/spnav.c src/util.c src/spnav_magellan.c
+    )
+endif()
 
-add_library(
-    spnav
-    SHARED
-    src/proto.c src/spnav.c src/util.c src/spnav_magellan.c
-)
 set_target_properties(
     spnav
     PROPERTIES
@@ -45,6 +55,7 @@ if(BUILD_EXAMPLE)
     )
     target_link_libraries(simple PUBLIC X11 spnav m)
 endif()
+
 
 set(VERSION ${PROJECT_VERSION})
 set(PREFIX ${CMAKE_INSTALL_PREFIX})
